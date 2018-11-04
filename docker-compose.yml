@@ -1,0 +1,28 @@
+version: '2'
+services:
+  web:
+    network_mode: host
+    cpuset: "0-1"
+    build:
+      context: ./
+      dockerfile: DockerFile-web
+    volumes:
+      - $PWD:/var/www/html
+
+    container_name: framework-web-running
+  db:
+    cpuset: "2-3"
+    build:
+      context: ./
+      dockerfile: Dockerfile-db
+    environment:
+      MYSQL_ROOT_PASSWORD: abc123
+
+    network_mode: host
+
+
+    container_name: framework-db-running
+
+#networks:
+#  framework-network:
+#

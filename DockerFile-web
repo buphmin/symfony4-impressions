@@ -1,0 +1,12 @@
+FROM php:7.2-apache
+
+RUN docker-php-ext-install pdo pdo_mysql
+RUN docker-php-ext-install opcache
+
+RUN rm -rf /etc/apache2/sites-enabled/*
+COPY dockerConfig/frameworktest.com.conf /etc/apache2/sites-available
+
+RUN a2ensite frameworktest.com.conf
+
+
+EXPOSE 80
