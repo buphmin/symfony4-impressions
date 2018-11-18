@@ -29,7 +29,7 @@ class Team
     private $name;
 
     /**
-     * @var \League
+     * @var League
      *
      * @ORM\ManyToOne(targetEntity="League")
      * @ORM\JoinColumns({
@@ -38,8 +38,9 @@ class Team
      */
     private $league;
 
+
     /**
-     * @var \User
+     * @var User
      *
      * @ORM\ManyToOne(targetEntity="User")
      * @ORM\JoinColumns({
@@ -48,5 +49,67 @@ class Team
      */
     private $user;
 
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
 
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     */
+    public function setName(string $name): void
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @return League
+     */
+    public function getLeague(): League
+    {
+        return $this->league;
+    }
+
+    /**
+     * @param League $league
+     */
+    public function setLeague(League $league): void
+    {
+        $this->league = $league;
+    }
+
+    /**
+     * @return User
+     */
+    public function getUser(): User
+    {
+        return $this->user;
+    }
+
+    /**
+     * @param User $user
+     */
+    public function setUser(User $user): void
+    {
+        $this->user = $user;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId(int $id): void
+    {
+        $this->id = $id;
+    }
 }

@@ -63,4 +63,9 @@ class LeaguePlayer
     {
         return $this->player;
     }
+
+    public function getTeam()
+    {
+        return $this->team;
+    }
 }
