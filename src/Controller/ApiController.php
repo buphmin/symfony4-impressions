@@ -18,6 +18,11 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Serializer\SerializerInterface;
 
+/**
+ * Class ApiController
+ * @package App\Controller
+ * @Route(path="/api")
+ */
 class ApiController extends AbstractController
 {
 
