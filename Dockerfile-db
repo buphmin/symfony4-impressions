@@ -1,4 +1,4 @@
-FROM mysql
+FROM mysql:5.7
 
 COPY dockerConfig/dump.sql /docker-entrypoint-initdb.d/dump.sql
 

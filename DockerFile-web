@@ -5,8 +5,11 @@ RUN docker-php-ext-install opcache
 
 RUN rm -rf /etc/apache2/sites-enabled/*
 COPY dockerConfig/frameworktest.com.conf /etc/apache2/sites-available
+COPY dockerConfig/php.ini /usr/local/etc/php
 
 RUN a2ensite frameworktest.com.conf
 
 
 EXPOSE 80
+
+RUN service apache2 restart
